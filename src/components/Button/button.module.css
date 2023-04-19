@@ -1,0 +1,36 @@
+.btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fcfcf3;
+    font-size: 16px;
+    font-family: 'Baskervville', serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0.2em 0.5em -0.4em #676767;
+    transition: 0.25s;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 0.6em 0.5em -0.4em #676767;
+    transform: translateY(-0.2em);
+    /* outline: none; */
+}
+
+.btn:active {
+  /* outline: -3px solid #AACE9B; */
+    /* background-color: transparent; */
+    transform: none;
+    box-shadow: inset 0px 0px 0px 3px #000;
+    /* outline: none; */
+}
+
+.btn *,
+.btn *:any-link{
+    text-decoration: none;
+}

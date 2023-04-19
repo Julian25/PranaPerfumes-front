@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #000;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.social_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.social_box p {
+    margin: 3px;
+}
+
+
+.copyright, .social_box p {
+    text-align: center;
+    color: #fff;
+}
