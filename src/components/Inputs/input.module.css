@@ -1,0 +1,41 @@
+.input_container {
+    margin: 20px;
+    width: 90%;
+}
+
+.input_container label {
+    display: block;
+    font-family: 'Baskervville', serif;
+    font-size: 25px;
+    color: #000;
+}
+
+.input_container input {
+    width: 90%;
+    height: 30px;
+    margin: 5px;
+    padding: 3px 5px;
+    border: none;
+    background-color: #fcfcf3;
+    border-bottom: 2px solid #212121;
+    font-family: 'Baskervville', serif;
+    font-size: 17px;
+}
+
+.input_container input:focus {
+    /* border: 3px solid #000000; */
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.error {
+    margin: 0px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #ff0303;
+    width: 250px;
+}
+
+.input_container .input_error {
+    border: 3px solid #ff0303;
+}

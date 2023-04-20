@@ -1,0 +1,36 @@
+.text_area_container{
+    margin: 20px;
+    width: 90%;
+}
+
+.text_area_container labe {
+    display: block;
+    font-size: 25px;
+    color: #fff;
+}
+
+.text_area_container textarea{
+    width: 90%;
+    margin: 5px;
+    padding: 3px 5px;
+    font-size: 17px;
+    color: #373867
+}
+
+.text_area_container textarea:focus {
+    border: 3px solid #000000;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.error {
+    margin: 0px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #fff;
+    width: 250px;
+}
+
+.text_area_error {
+    border: 3px solid #ff0303;
+}
