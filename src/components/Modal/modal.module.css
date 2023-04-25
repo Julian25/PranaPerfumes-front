@@ -1,0 +1,32 @@
+.modal_overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 3px solid black;
+    z-index: 10;
+}
+
+.modal_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 60px 30px 60px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.children_container {
+    align-self: center;
+}
+
+.button_wrapper {
+    display: flex;
+}

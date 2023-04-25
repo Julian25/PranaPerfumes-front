@@ -34,3 +34,123 @@
 .btn *:any-link{
     text-decoration: none;
 }
+
+
+.btnBlock {
+    display: block;
+    width: 100%;
+}
+
+.redBtn {
+    background-color: #F33413;
+    color: white
+}
+
+.darkerBtn {
+    background-color: #49a37b;
+    color: #373867;
+}
+
+.redBtn:active {
+    box-shadow: inset 0px 0px 0px 3px #F33413;
+    color: #373867;
+}
+
+/*=== Close and ok btn ===*/
+
+.roundBtn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 5px;
+    padding: 0px;
+    border: none;
+    border-radius: 50%;
+    color: #15162A;
+    font-size: 15px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+    box-shadow 400ms cubic-bezier(.2,0,.7,1),
+}
+
+.acceptBtn {
+    background-color: var(--bright-green);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: #F33413;
+}
+
+.roundBtn:hover,
+.roundBtn:focus {
+    outline: none;
+}
+
+.acceptBtn:hover,
+.acceptBtn:focus {
+    box-shadow: 0 0 1px 5px #49a37b66,
+    0 0 1px 10px #49a37b1a,
+    0 0 1px 15px #49a37b1a;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    box-shadow: 0 0 1px 5px #f3331266,
+    0 0 1px 10px #f333121a,
+    0 0 1px 15px #f333121a;
+}
+
+.roundBtn:active{
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.acceptBtn:active{
+    box-shadow: inset 0px 0px 0px 3px var(--bright-green);
+}
+
+.closeBtn:active{
+    box-shadow: inset 0px 0px 0px 3px var(--scarlet);
+}
+
+.editBtn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 5px;
+    padding: 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--light-grayish-green);
+    color: var(--grayish-navy);
+    font-size: var(--button);
+    font-weight: var(--button-weight);
+    font-family: inherit;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+    box-shadow 400ms cubic-bezier(.2,0,.7,1),
+}
+
+.editBtn:hover,
+.editBtn:focus {
+    box-shadow: 0 0 1px 5px rgba(170, 243, 18, 0.4),
+    0 0 1px 10px rgba(170, 243, 18, 0.1),
+    0 0 1px 15px rgba(168, 243, 18, 0.1);
+    outline: none;
+}
+
+.editBtn:active{
+    box-shadow: none;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 0px 3px var(--light-grayish-green);
+}

@@ -5,6 +5,7 @@ import CreateCategory from '../../components/CreateCategory';
 function Categories() {
   return (
     <div className={styles.container}>
+        <h2>Crear nueva categoria</h2>
         <CreateCategory />
     </div>
   )

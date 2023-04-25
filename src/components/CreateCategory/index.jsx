@@ -48,7 +48,6 @@ function CreateCategory() {
         error={errors.name}
       />
       <Button>Crear categoria</Button>
-      {/* <button onClick={()=> console.log(errors)}>error</button> */}
     </form>
   )
 }
