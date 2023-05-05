@@ -16,7 +16,8 @@
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus, .acceptBtn:hover,
+.acceptBtn:focus {
     box-shadow: 0 0.6em 0.5em -0.4em #676767;
     transform: translateY(-0.2em);
     /* outline: none; */
@@ -78,7 +79,7 @@
 }
 
 .acceptBtn {
-    background-color: var(--bright-green);
+    background-color: #49a37b;
 }
 
 .closeBtn {
@@ -91,13 +92,6 @@
 .roundBtn:hover,
 .roundBtn:focus {
     outline: none;
-}
-
-.acceptBtn:hover,
-.acceptBtn:focus {
-    box-shadow: 0 0 1px 5px #49a37b66,
-    0 0 1px 10px #49a37b1a,
-    0 0 1px 15px #49a37b1a;
 }
 
 .closeBtn:hover,
@@ -113,11 +107,11 @@
 }
 
 .acceptBtn:active{
-    box-shadow: inset 0px 0px 0px 3px var(--bright-green);
+    box-shadow: inset 0px 0px 0px 3px #49a37b;
 }
 
 .closeBtn:active{
-    box-shadow: inset 0px 0px 0px 3px var(--scarlet);
+    box-shadow: inset 0px 0px 0px 3px #F33413;
 }
 
 .editBtn {

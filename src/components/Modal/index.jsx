@@ -17,11 +17,11 @@ function Modal({ children, isOpen, handleClose, isConfirmation, confirmed}) {
         </div>
         { isConfirmation ? (
             <div className={styles.button_wrapper}>
-                <Button classes="accept" onClick={confirmed}>
-                    Accept
+                <Button classes='accept' onClick={confirmed}>
+                    Aceptar
                 </Button>
                 <Button classes='red' onClick={handleClose}>
-                    Cancel
+                    Cancelar
                 </Button>
             </div>
         ) : (

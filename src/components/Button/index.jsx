@@ -12,7 +12,7 @@ function Button({children, classes, onClick}) {
             classes = `${styles.roundBtn} ${styles.closeBtn}`;
             break;
         case 'accept':
-            classes = `${styles.roundBtn} ${styles.acceptBtn}`
+            classes = `${styles.btn} ${styles.acceptBtn}`
             break;
         default:
             classes = styles.btn;

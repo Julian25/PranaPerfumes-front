@@ -3,31 +3,34 @@
     width: 90%;
 }
 
-.text_area_container labe {
+.text_area_container label {
     display: block;
     font-size: 25px;
-    color: #fff;
+    color: #000;
 }
 
 .text_area_container textarea{
     width: 90%;
+    height: 30px;
     margin: 5px;
     padding: 3px 5px;
+    border: none;
+    background-color: #fcfcf3;
+    border-bottom: 2px solid #212121;
+    font-family: 'Baskervville', serif;
     font-size: 17px;
-    color: #373867
 }
 
 .text_area_container textarea:focus {
-    border: 3px solid #000000;
-	outline: none;
+    outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
 
 .error {
     margin: 0px;
     margin-left: 10px;
-    font-size: 15px;
-    color: #fff;
+    font-size: 20px;
+    color: #ff0303;
     width: 250px;
 }
 

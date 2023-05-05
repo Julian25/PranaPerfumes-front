@@ -14,7 +14,7 @@ function Administration() {
 
   useEffect(() => {
     dispatch(getAuthAdmin())
-  });
+  },[]);
 
   const logOut = () => {
     firebase.auth().signOut();
@@ -33,7 +33,7 @@ function Administration() {
           </Link>
         </div>
         <div className={styles.admin_container}>
-          <Link className={styles.link}>
+          <Link to='/administracion/productos' className={styles.link}>
             <img src={Admin} alt="Imagen de administracion" />
             <span>Administrar productos</span>
           </Link>
