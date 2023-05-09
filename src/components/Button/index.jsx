@@ -14,6 +14,9 @@ function Button({children, classes, onClick}) {
         case 'accept':
             classes = `${styles.btn} ${styles.acceptBtn}`
             break;
+        case 'card':
+            classes = styles.cardBtn;
+            break;
         default:
             classes = styles.btn;
             break;

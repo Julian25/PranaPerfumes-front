@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getProducts, deleteProduct } from '../../redux/thunks/admin';
 import { toggleModal } from '../../redux/global/action';
 import Modal from '../Modal';
@@ -57,7 +58,9 @@ function ProductsList() {
                       dispatch(toggleModal());
                     }}
                   />
-                  <img src={Pencil} alt="icono de editar" className={styles.td_img} />
+                  <Link to={`/administracion/productos/${product._id}`}>
+                    <img src={Pencil} alt="icono de editar" className={styles.td_img} />
+                  </Link>
                 </td>
             </tr>
         ))}

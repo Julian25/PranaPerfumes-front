@@ -14,6 +14,7 @@ function Select({ text, id, options, error, register }) {
                 selected
                 disabled
                 className={styles.read_only}
+                value=""
             >
                 {`Seleccionar ${text}`}
             </option>

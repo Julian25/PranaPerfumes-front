@@ -106,15 +106,16 @@ function AddProduct({closeForm}) {
     (error, result) => {
       if(!error && result.event === 'success' ) {
         setImages((prev) => [...prev,  {url: result.info.url, public_id: result.info.public_id}])
-        setValue('pictures', result.info.secure_url);
+        setValue('pictures', [ { url: result.info.secure_url, public_id: result.info.public_id}]);
       }
     });
     widget.open();
   }
    const handleRemoveImg = async (obj) => {
     setImageToRemove(obj.public_id);
+    console.log(imageToRemove);
     try {
-      const token = sessionStorage.getItem('token');
+      // const token = sessionStorage.getItem('token');
       const requestConfig = {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json', token }
@@ -139,6 +140,7 @@ function AddProduct({closeForm}) {
       reset();
       setImages([]);
       setProductCreated(true)
+      console.log(data)
     } else {
       dispatch(toggleModal());
       setProductCreated(false)
@@ -152,11 +154,11 @@ function AddProduct({closeForm}) {
 
 
   return (
-    <div className={styles.form_container} onSubmit={handleSubmit(submitHandler)}>
+    <div className={styles.form_container} >
         <button className={styles.close} onClick={closeForm} >
             X
         </button>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit(submitHandler)}>
         <Input
           type={'text'}
           id={'name'}

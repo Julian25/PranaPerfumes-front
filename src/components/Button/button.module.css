@@ -17,7 +17,7 @@
 
 .btn:hover,
 .btn:focus, .acceptBtn:hover,
-.acceptBtn:focus {
+.acceptBtn:focus, .cardBtn:hover, .cardBtn:focus {
     box-shadow: 0 0.6em 0.5em -0.4em #676767;
     transform: translateY(-0.2em);
     /* outline: none; */
@@ -56,6 +56,7 @@
     box-shadow: inset 0px 0px 0px 3px #F33413;
     color: #373867;
 }
+
 
 /*=== Close and ok btn ===*/
 
@@ -148,3 +149,21 @@
     background-color: transparent;
     box-shadow: inset 0px 0px 0px 3px var(--light-grayish-green);
 }
+
+
+.cardBtn {
+    display: inline-block;
+    margin: 8px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fcfcf3;
+    font-size: 15px;
+    font-family: 'Baskervville', serif;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0.2em 0.5em -0.4em #676767;
+    transition: 0.25s;
+}
+

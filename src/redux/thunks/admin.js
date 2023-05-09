@@ -178,8 +178,7 @@ export const getProducts = () => {
     return async (dispatch) => {
         dispatch(getProductsPending());
         try{
-            const token = sessionStorage.getItem('token');
-            const response = await fetch(`${url}/admin/products/`, { headers: { token } });
+            const response = await fetch(`${url}/general/`);
             const data = await response.json();
 
             return !data.error
@@ -198,12 +197,11 @@ export const getSingleProduct = (id) => {
         dispatch(getSingleProductPending())
 
         try {
-            const token = sessionStorage.getItem('token');
-            const response  = await fetch(`${url}/admin/products/${id}`, { headers: { token } });
+            const response  = await fetch(`${url}/general/${id}`);
             const data = await response.json();
 
             return !data.error
-                ? dispatch(getSingleProductSuccess(data))
+                ? dispatch(getSingleProductSuccess(data.data))
                 : dispatch(getSingleProductError(data.message));
         } catch (error) {
             return dispatch(getSingleProduct(error));
@@ -239,7 +237,7 @@ export const createProduct = (obj) => {
 // edit Product 
 export const editProduct = (obj, id) => {
     return async (dispatch) => {
-        dispatch(editCategoryPending());
+        dispatch(editProductPending());
 
         try {
             const token = sessionStorage.getItem('token');

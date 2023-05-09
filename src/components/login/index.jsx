@@ -68,8 +68,7 @@ function Login() {
 
     const token = sessionStorage.getItem('token')
     const role =sessionStorage.getItem('role');
-    console.log(role);
-    console.log(token)
+
     const submitHandler = (data) => {
         dispatch(login(data));
         setShowModal(true);

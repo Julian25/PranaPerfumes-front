@@ -1,0 +1,45 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 42%;
+    max-width: 300px ;
+    height: 350px;
+    background-color: #aace9b1a;
+    box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
+    border: 2px solid #212121;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card_title, .card_price {
+    width: 90%;
+    height: 80px;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+}
+
+.card_category {
+    width: 90%;
+    height: 80px;
+    margin: 5px;
+    font-size: 15px;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+}

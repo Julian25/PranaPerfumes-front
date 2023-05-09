@@ -48,7 +48,7 @@ export const productsReducer = ( state = initialState, action) =>{
                 ...state,
                 isLoading: true
             };
-        case GET_PRODUCTS_SUCCESS:
+        case GET_SINGLE_PRODUCT_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
