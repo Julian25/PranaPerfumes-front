@@ -42,9 +42,9 @@
     border-bottom: 1px solid #212121;
 }
 .list_item span {
-    width: 30%;
+    width: 50%;
     font-family: 'Baskervville', serif;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
 }
 

@@ -1,2 +1,6 @@
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const SET_ADMIN = 'SET_ADMIN';
+export const INCREMENT_COUNT = 'INCREMENT_COUNT';
+export const DECREMENT_COUNT = 'DECREMENT_COUNT';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';

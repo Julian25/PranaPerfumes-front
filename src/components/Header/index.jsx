@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCategories } from '../../redux/thunks/admin';
 import { NavLink } from 'react-router-dom';
 import styles from './header.module.css';
 import Arrow from '../../assets/icons/drop.png';
+import Cart from '../../assets/icons/cart.png';
 
 function Header() {
+  const dispatch = useDispatch();
   const [show,setShow] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
+  const count = useSelector((state) => state.global.count);
+  const categories = useSelector((state) => state.categories.list);
+
+  useEffect(() => {
+    dispatch(getCategories());
+  }, []);
 
   const showMenu = () =>  {
     setShow(!show);
@@ -47,10 +57,14 @@ function Header() {
     <>
       <header className={styles.header_container}>
         <div className={styles.logo}>
-          <h1>PRANA</h1>
+          <h1>ESSENZA</h1>
           <span className={styles.line}></span>
-          <span className={styles.sub_title}>PERFUMES</span>
+          <span className={styles.sub_title}>EXPERIENCIAS</span>
         </div>
+        <NavLink to='/carrito' className={styles.cart_link}>
+          <img src={Cart} alt="cart icon"  className={styles.cart}/>
+          {count > 0 && (<span className={`${styles.badge}  ${styles.badge__warning} ${styles.cart__count}`}>{count}</span>)}
+        </NavLink>
         <div className={classesSpan} onClick={showMenu}>
           <span></span>
           <span></span>
@@ -62,22 +76,17 @@ function Header() {
               <li>Home</li>
             </NavLink>
               <li className={styles.fragancias} onClick={openDrop}>
-                Fragancias
+                Categorías
                 <img src={Arrow} alt="icono flecha" className={classesServ} />
               </li>
                 <ul className={classesDrop}>
-                  <NavLink to='/fragancias/ellas' className={styles.link} onClick={closeMenu}>
-                    <li>
-                      Fragancias para ellas
-                    </li>
+                 {categories?.map((category) => (
+                  <NavLink to={`/productos/${category.name.toLowerCase()}`} key={category.name} className={styles.link}  onClick={closeMenu}>
+                    <li>{category.name}</li>
                   </NavLink>
-                  <NavLink to='/fragancias/ellos' className={styles.link} onClick={closeMenu}>
-                    <li>
-                      Fragancias para ellos
-                    </li>
-                  </NavLink>
+                 ))}
                 </ul>
-            <NavLink className={styles.link} to="/administracion">
+            <NavLink className={styles.link} to="/administracion"  onClick={closeMenu}>
               <li>Administrar</li>
             </NavLink>
           </ul>

@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #fcfcf3;
+    margin-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container h2 {
+    margin-top: 100px;
+    width: 80%;
+    font-family: 'Baskervville', serif;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 400;
+}

@@ -11,6 +11,7 @@
     border: 2px solid #212121;
     border-radius: 10px;
     margin: 10px;
+    margin-bottom: 50px;
 }
 
 .card_img {
@@ -42,4 +43,26 @@
     font-size: 15px;
     font-family: 'Baskervville', serif;
     text-align: center;
+}
+
+.card_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: 'Baskervville', serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.card_link img {
+    width: 25px;
+    height: 25px;
+    margin-left: 3px;
 }

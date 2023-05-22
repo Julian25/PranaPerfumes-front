@@ -64,8 +64,7 @@ export const getCategories = () => {
     return async (dispatch) => {
         dispatch(getCategoriesPending());
         try {
-            const token = sessionStorage.getItem('token');
-            const response = await fetch(`${url}/admin/categories`, { headers: { token } });
+            const response = await fetch(`${url}/allCategories`);
             const data = await response.json();
 
             return !data.error

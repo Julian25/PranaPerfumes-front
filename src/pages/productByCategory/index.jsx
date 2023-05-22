@@ -1,27 +1,33 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/thunks/admin';
 import { addProductToCart } from '../../redux/thunks/global';
 import { incrementCount } from '../../redux/global/action';
 import ProductCard from '../../components/ProductCard';
-import styles from './products.module.css';
+import styles from './productByCategory.module.css';
 
 
-
-function Products() {
+function productByCategory() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.list);
+  const { category } = useParams();
 
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(getProducts());
-  }, [])
+  }, []);
 
-  
+  const upperCaseCategory = category.charAt(0).toLocaleUpperCase() + category.slice(1);
+  console.log(upperCaseCategory)
+  const productsByCategory = products.filter((product) => {
+    return product?.category.name === upperCaseCategory;
+  })
+
   return (
     <div className={styles.container}>
-      <h2>Productos</h2>
-      { products.map( (product) => (
+      <h2>{upperCaseCategory}</h2>
+      {productsByCategory?.map((product) => (
         <ProductCard
           key={product._id}
           id={product._id}
@@ -39,4 +45,4 @@ function Products() {
   )
 }
 
-export default Products
+export default productByCategory;

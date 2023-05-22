@@ -83,6 +83,7 @@
     background-color: #000;
     border-radius:0 5px 5px 0;
     height: -webkit-fill-available;
+    overflow: scroll;
     transform: translateX(-100%);
     transition: 0.7s ease all;
 }
@@ -145,4 +146,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.cart {
+    width: 30px;
+    margin-left: 50px;
+}
+
+.cart__count {
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    vertical-align: top;
+    margin-left: -8px;
+    border-radius: 50%;
+    margin-top: -5px;
+}
+
+.badge {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 9px;
+}
+
+
+.cart_link {
+    text-decoration: none;
 }

@@ -39,22 +39,18 @@ function AddProduct({closeForm}) {
       }),
     description: Joi
       .string()
-      .min(10)
+      .min(0)
       .max(200)
-      .required()
       .label('Description')
       .messages({
-        'string.empty': `El campo "descripción" no puede estar vacío`,
         'string.max': `La descripción del producto no puede contener más de 200 caracteres`,
         'string.min': `La descripción del producto no puede estar compuesta por menos de 10 caracteres`
       }),
     price: Joi
       .number()
-      .required()
-      .label('Price')
-      .messages({
-        'string.empty': `El campo "precio" no puede estar vacío`,
-      }),
+      .allow('')
+      .optional()
+      .label('Price'),
     category: Joi
       .string()
       .required()

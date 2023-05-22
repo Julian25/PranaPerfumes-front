@@ -11,6 +11,9 @@ function Button({children, classes, onClick}) {
         case 'close':
             classes = `${styles.roundBtn} ${styles.closeBtn}`;
             break;
+        case 'cart':
+            classes = styles.cartBtn
+            break;
         case 'accept':
             classes = `${styles.btn} ${styles.acceptBtn}`
             break;
