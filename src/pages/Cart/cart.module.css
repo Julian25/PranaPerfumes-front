@@ -31,6 +31,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 90%;
+    max-width: 800px;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #212121;
@@ -95,4 +96,24 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .cart_item_img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .cart_item_header h3 {
+        font-size: 25px;
+    }
+
+    .cart_item_body p {
+        font-size: 25px;
+    }
+
+    .total {
+        font-size: 40px;
+    }
 }

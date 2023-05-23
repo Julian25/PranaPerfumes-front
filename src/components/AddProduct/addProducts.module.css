@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     width: 90%;
+    max-width: 500px;
     height: auto;
     background-color: #aace9b1a;
     border: 2px solid #000;

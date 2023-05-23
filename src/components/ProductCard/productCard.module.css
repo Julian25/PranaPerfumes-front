@@ -66,3 +66,19 @@
     height: 25px;
     margin-left: 3px;
 }
+
+@media screen and (min-width: 768px) {
+    .card_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .card {
+        height: 400px;
+    }
+
+    .card_title, .card_price {
+        font-size: 25px;
+    }
+
+}
