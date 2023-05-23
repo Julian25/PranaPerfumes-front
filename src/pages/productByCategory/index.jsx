@@ -20,7 +20,7 @@ function productByCategory() {
 
   const upperCaseCategory = category.charAt(0).toLocaleUpperCase() + category.slice(1);
   console.log(upperCaseCategory)
-  const productsByCategory = products.filter((product) => {
+  const productsByCategory = products?.filter((product) => {
     return product?.category.name === upperCaseCategory;
   })
 

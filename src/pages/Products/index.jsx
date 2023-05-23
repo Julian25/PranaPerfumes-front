@@ -21,7 +21,7 @@ function Products() {
   return (
     <div className={styles.container}>
       <h2>Productos</h2>
-      { products.map( (product) => (
+      { products?.map( (product) => (
         <ProductCard
           key={product._id}
           id={product._id}
