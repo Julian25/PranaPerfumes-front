@@ -21,7 +21,7 @@ function productByCategory() {
   const upperCaseCategory = category.charAt(0).toLocaleUpperCase() + category.slice(1);
   console.log(upperCaseCategory)
   const productsByCategory = products?.filter((product) => {
-    return product?.category.name === upperCaseCategory;
+    return product?.category?.name === upperCaseCategory;
   })
 
   return (
@@ -33,8 +33,8 @@ function productByCategory() {
           id={product._id}
           name={product.name}
           price={product.price}
-          category={product.category?.name}
-          pictures={product.pictures[0].url}
+          category={product?.category?.name}
+          pictures={product.pictures[0]?.url}
           addToCar={() => {
             dispatch(incrementCount());
             dispatch(addProductToCart(product._id));
