@@ -33,7 +33,7 @@ function productByCategory() {
           id={product._id}
           name={product.name}
           price={product.price}
-          category={product.category.name}
+          category={product.category?.name}
           pictures={product.pictures[0].url}
           addToCar={() => {
             dispatch(incrementCount());
