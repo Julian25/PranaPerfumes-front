@@ -1,7 +1,8 @@
 # essenza ecommerce
 
 Front end code of a mern stack ecommerce project
-Yo can check de back end code in [ecommerce-back repository](https://github.com/Julian25/ecommerce-back)
+
+You can check de back end code in [ecommerce-back repository](https://github.com/Julian25/ecommerce-back)
 
 As a regular user you can:
 
