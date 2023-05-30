@@ -11,8 +11,7 @@ import styles from './cart.module.css';
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.global.cart);
-  const count = useSelector((state) => state.global.count);
-  
+
   const totalPrice = cart.reduce((total, cartItem) => total + (cartItem.price * cartItem.cartCount), 0);
 
   const order = `Hola, te paso mi pedido: 
@@ -22,7 +21,6 @@ function Cart() {
     0)}`
   )}`;
 
-  console.log(totalPrice);
   return (
     <div className={styles.container} >
       <h2>Carrito de compras</h2>

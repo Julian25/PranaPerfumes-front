@@ -6,12 +6,14 @@ import { getProducts } from '../../redux/thunks/admin';
 import { addProductToCart } from '../../redux/thunks/global';
 import { incrementCount } from '../../redux/global/action';
 import ProductCard from '../../components/ProductCard';
+import Loading from '../../components/Loading';
 import styles from './productByCategory.module.css';
 
 
 function productByCategory() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.list);
+  const isLoading = useSelector((state) => state.products.isLoading);
   const { category } = useParams();
 
   useEffect(() => {
@@ -19,7 +21,6 @@ function productByCategory() {
   }, []);
 
   const upperCaseCategory = category.charAt(0).toLocaleUpperCase() + category.slice(1);
-  console.log(upperCaseCategory)
   const productsByCategory = products?.filter((product) => {
     return product?.category?.name === upperCaseCategory;
   })
@@ -27,20 +28,22 @@ function productByCategory() {
   return (
     <div className={styles.container}>
       <h2>{upperCaseCategory}</h2>
-      {productsByCategory?.map((product) => (
-        <ProductCard
-          key={product._id}
-          id={product._id}
-          name={product.name}
-          price={product.price}
-          category={product?.category?.name}
-          pictures={product.pictures[0]?.url}
-          addToCar={() => {
-            dispatch(incrementCount());
-            dispatch(addProductToCart(product._id));
-          }}
-        />
-      ))}
+      <div className={styles.products_container}>
+        {isLoading ? (<Loading />) : (productsByCategory?.map((product) => (
+          <ProductCard
+            key={product._id}
+            id={product._id}
+            name={product.name}
+            price={product.price}
+            category={product?.category?.name}
+            pictures={product.pictures[0]?.url}
+            addToCar={() => {
+              dispatch(incrementCount());
+              dispatch(addProductToCart(product._id));
+            }}
+          />
+        )))}
+      </div>
     </div>
   )
 }
