@@ -18,7 +18,6 @@ function Products() {
   const products = useSelector((state) => state.products.list);
   const isLoading = useSelector((state) => state.products.isLoading);
   const categories = useSelector((state) => state.categories.list);
-  const [showDropDown, setShowDropDown] = useState(false);
 
   useEffect(() =>{
     dispatch(getProducts());

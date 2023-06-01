@@ -30,7 +30,7 @@ function CategoriesMenu({categories}) {
       <ul className={classesDrop}>
         <span className={styles.categories_close} onClick={openDrop}>X</span>
         {categories?.map((category) => (
-          <NavLink to={`/productos/${category.name.toLowerCase()}`} key={category.name} className={styles.link}>
+          <NavLink to={`/productos/${category.name.toLowerCase()}`} key={category.name} className={styles.link} onClick={openDrop}>
             <li>{category.name}</li>
           </NavLink>
         ))}
