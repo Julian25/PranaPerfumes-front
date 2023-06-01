@@ -75,6 +75,7 @@
 
     .card {
         height: 400px;
+        margin: 40px;
     }
 
     .card_title, .card_price {

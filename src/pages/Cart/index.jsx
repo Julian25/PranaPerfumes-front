@@ -57,7 +57,7 @@ function Cart() {
       )}
       {totalPrice > 0 &&  <p className={styles.total}>Total: ${totalPrice}</p> }
       {totalPrice > 0 && 
-        <Link to={`https://wa.me/3413562668?text=${encodeURIComponent(
+        <Link to={`https://wa.me/3412297399?text=${encodeURIComponent(
                 order
               )}`}
             target='_blank'

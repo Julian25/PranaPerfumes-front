@@ -83,7 +83,7 @@
     background-color: #000;
     border-radius:0 5px 5px 0;
     height: -webkit-fill-available;
-    overflow: scroll;
+    overflow-y: scroll;
     transform: translateX(-100%);
     transition: 0.7s ease all;
 }

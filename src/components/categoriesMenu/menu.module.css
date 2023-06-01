@@ -1,0 +1,65 @@
+.categorias {
+    align-self: flex-start;
+    margin-left: 40px;
+    cursor: pointer;
+    margin-top: 100px;
+    font-family: 'Baskervville', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.dropDown {
+    position: fixed;
+    top: 200px;
+    left: 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 350px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #000;
+    border-radius:0 10px 10px 0;
+    transform: translateX(-100%);
+    transition: 0.7s ease all;
+    z-index: 0;
+}
+
+.dropDown li {
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.dropDown__open {
+    transform: translateX(0) !important;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.link li {
+    width: 80%;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Baskervville', serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.categories_close {
+    align-self: flex-end;
+    margin: 10px  30px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
+}

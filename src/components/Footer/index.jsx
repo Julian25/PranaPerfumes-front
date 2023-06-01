@@ -7,13 +7,13 @@ function Footer() {
     <footer className={styles.container}>
       <div className={styles.links}>
         <div className={styles.social_box}>
-          <a href="https://www.instagram.com/prana.perfumes/" target="blank">
+          <a href="https://www.instagram.com/essenza.experiencias/" target="blank">
             <img src={Instagram} alt="Instagram logo" />
           </a>
           <p>Seguinos</p>
         </div>
         <div className={styles.social_box}>
-          <a href='#' target="blank">
+          <a href='https://wa.me/+543412297399' target="blank">
             <img src={Whatsapp} alt="Whatsapp logo" />
           </a>
           <p>Escribinos</p>

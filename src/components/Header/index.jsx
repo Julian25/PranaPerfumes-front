@@ -80,11 +80,11 @@ function Header() {
                 <img src={Arrow} alt="icono flecha" className={classesServ} />
               </li>
                 <ul className={classesDrop}>
-                 {categories?.map((category) => (
+                {categories?.map((category) => (
                   <NavLink to={`/productos/${category.name.toLowerCase()}`} key={category.name} className={styles.link}  onClick={closeMenu}>
                     <li>{category.name}</li>
                   </NavLink>
-                 ))}
+                ))}
                 </ul>
             <NavLink className={styles.link} to="/administracion"  onClick={closeMenu}>
               <li>Administrar</li>
