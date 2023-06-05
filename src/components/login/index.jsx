@@ -81,9 +81,7 @@ function Login() {
       if (!error) {
           setPath();
           navigate('/administracion/');
-          console.log(adminPath);
-          dispatch(getAuthAdmin());
-          console.log(token)
+          // dispatch(getAuthAdmin());
         }
     };
 

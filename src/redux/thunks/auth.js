@@ -14,11 +14,13 @@ export const login = (credentials) => {
                 .auth()
                 .signInWithEmailAndPassword(credentials.email, credentials.password);
             const token = await response.user.getIdToken();
+            const uid = response.user.uid;
             const {
                 claims: { role }
             } = await response.user.getIdTokenResult();
             sessionStorage.setItem('token', token);
             sessionStorage.setItem('role', role);
+            sessionStorage.setItem('uid', uid);
             return dispatch(loginSuccess());
         } catch (error) {
             return dispatch(loginError(error.toString()));

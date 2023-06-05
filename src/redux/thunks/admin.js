@@ -42,11 +42,10 @@ const url = import.meta.env.VITE_REACT_APP_API_URL;
 
 // auth
 
-export const getAuthAdmin = () => {
-    const token = sessionStorage.getItem('token');
+export const getAuthAdmin = (uid) => {
     return async (dispatch) => {
         dispatch(getAuthenticationPending());
-        return fetch(`${url}/admins/auth`, { headers: { token }})
+        return fetch(`${url}/admins/${uid}`)
             .then((response) => response.json())
             .then((response) =>{
                 dispatch(getAuthenticationSuccess(response.data));

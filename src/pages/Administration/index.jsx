@@ -9,12 +9,13 @@ import Button from '../../components/Button'
 
 function Administration() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((store) => store.auth.user);
   const navigate = useNavigate();
+  const uid = sessionStorage.getItem('uid');
 
-  useEffect(() => {
-    dispatch(getAuthAdmin())
-  },[]);
+   useEffect(() => {
+     dispatch(getAuthAdmin(uid))
+   },[]);
 
   const logOut = () => {
     firebase.auth().signOut();
@@ -25,7 +26,7 @@ function Administration() {
 
   return (
     <div className={styles.container}>
-        <h2>Bienvenido, {user?.firstName}</h2>
+        <h2>Bienvenida/o, {user?.firstName}</h2>
         <div className={styles.admin_container}>
           <Link className={styles.link} to='/administracion/categorias'>
             <img src={Admin} alt="Imagen de administracion" />
