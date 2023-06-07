@@ -111,7 +111,7 @@ function AddProduct({closeForm}) {
     setImageToRemove(obj.public_id);
     console.log(imageToRemove);
     try {
-      // const token = sessionStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const requestConfig = {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json', token }
