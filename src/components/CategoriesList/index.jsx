@@ -51,7 +51,7 @@ function CategoriesList() {
             handleClose={confirmation ? () => dispatch(toggleModal(false)) : () => closeHandler()}
             confirmed={() => confirmHandler()}
         >
-            <p>{confirmation ? '¿Estás seguro de que querés eliminar esta categoría?' : 'Categoria eliminada' }</p>
+            <p className={styles.modal_text}>{confirmation ? '¿Estás seguro de que querés eliminar esta categoría?' : 'Categoria eliminada' }</p>
         </Modal>
     </div>
   )

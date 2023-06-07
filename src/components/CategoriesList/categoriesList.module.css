@@ -40,3 +40,10 @@
     width: 40px;
     height: 40px;
 }
+
+.modal_text {
+    font-family: 'Baskervville', serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+}
