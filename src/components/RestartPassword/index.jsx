@@ -5,15 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { joiResolver } from '@hookform/resolvers/joi';
+import firebase from '../../helper/firebase'
 import Input from '../Inputs';
 import Button from '../Button';
-import Loading from '../Loading';
 import Modal from '../Modal';
-import styles from './login.module.css';
-import { NavLink } from 'react-router-dom';
-import { login } from '../../redux/thunks/auth';
-import { resetMessage } from '../../redux/auth/actions';
-import { setAdmin } from '../../redux/global/action';
+import styles from './reset.module.css';
 
 
 const loginValidations = Joi.object({
@@ -24,24 +20,18 @@ const loginValidations = Joi.object({
       .messages({
         'string.empty': `El campo Email no puede estar vacío`,
         'string.email': `Debe ingresar una dirección de email valida`
-      }),
-    password: Joi.string().required().label('Password').min(8).messages({
-      'string.empty': `El campo password no puede estar vacio`,
-      'string.min': `Ingrese un password valido`
-    })
+      })
   });
 
 
 
 
-function Login() {
+function ResetPassWord() {
     const [showModal, setShowModal] = useState(false);
-    const dispatch = useDispatch();
+    const [message, setMessage] = useState('');
+    const [sent, setSent] = useState(false);
     const isLoading = useSelector( (state) => state.auth.isLoading);
-    const message = useSelector( (state) => state.auth.message);
-    const adminPath = useSelector( (state) => state.global.adminPath)
     const navigate = useNavigate();
-    const error = useSelector( (state) => state.auth.error);
 
     const {
         register,
@@ -52,8 +42,7 @@ function Login() {
         mode: 'onBlur',
         resolver: joiResolver(loginValidations),
         defaultValues: {
-            email: '',
-            password: ''
+            email: ''
         }
     });
 
@@ -61,37 +50,39 @@ function Login() {
       reset();
     }, []);
 
-    const setPath = () => {
-      if(sessionStorage.getItem('token')) {
-        sessionStorage.getItem('role') === 'Admin' && dispatch(setAdmin('/administracion'));
-      }
+    const recoverPassword = (email) => {
+        firebase
+            .auth().sendPasswordResetEmail(email)
+            .then(() => {
+                setSent(true);
+                setMessage('Email para restablecer contraseña enviado. Revisa tu casilla de correos.');
+                setShowModal(true);
+            })
+            .catch((error) => {
+                console.log(error);
+                setSent(false);
+                setMessage('El email provisto no corresponde a un usuario existente');
+                setShowModal(true);
+            })
     }
 
-    const token = sessionStorage.getItem('token')
-    const role =sessionStorage.getItem('role');
-
     const submitHandler = (data) => {
-        dispatch(login(data));
-        setShowModal(true);
-    };
+        recoverPassword(data.email);
+    }
 
     const closeHandler = () => {
       setShowModal(false);
-      dispatch(resetMessage());
-      if (!error) {
-          setPath();
-          navigate('/administracion/');
-        }
+      setMessage('');
+      if(sent === true) {
+        navigate('/login')
+      }
     };
 
 
       return (
     <section className={styles.container}>
-        {isLoading ? (
-            <Loading />
-        ) : (
+        <h2>Recuperar contraseña</h2>
             <div className={styles.form_container}>
-                <h2>Log In</h2>
                 <form onSubmit={handleSubmit(submitHandler)} className={styles.form}>
                     <Input
                         type={"email"}
@@ -101,26 +92,14 @@ function Login() {
                         register={register}
                         onkeyDown={handleSubmit(submitHandler)}
                     />
-                    <Input
-                        type={"password"}
-                        id={"password"}
-                        text={"Contraseña"}
-                        error={errors.password}
-                        register={register}
-                        onkeyDown={handleSubmit(submitHandler)}
-                    />
-                    <Button>Log in</Button>
+                    <Button>Enviar</Button>
                 </form>
             </div>
-        )}
         <Modal handleClose={() => closeHandler()} isConfirmation={false} isOpen={showModal}>
-          <h2>{message ? message : 'Login...'}</h2>
+          <p className={styles.modal_message}>{message}</p>
         </Modal>
-        <NavLink className={styles.link} to='/password'>
-          Restablecer contraseña
-        </NavLink>
     </section>
   );
 }
 
-export default Login;
+export default ResetPassWord;

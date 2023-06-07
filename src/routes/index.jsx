@@ -8,6 +8,7 @@ import Login from '../components/login';
 import Product from '../components/Product';
 import Cart from '../pages/Cart';
 import ProductByCategory from '../pages/productByCategory';
+import ResetPassWord from '../components/RestartPassword';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
               <Route path="/productos/:category" element={<ProductByCategory />}></Route>
               <Route path="/producto/:id" element={<Product />}></Route>
               <Route path="/login" element={<Login />}></Route>
+              <Route path="/password" element={<ResetPassWord />}></Route>
               <Route path='/administracion/*' element={<PrivateRoute />}></Route>
           </Routes>
         </Layout>

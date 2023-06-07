@@ -16,13 +16,14 @@
     background-color: #fcfcf3;
     width: 90%;
     max-width: 500px;
-    margin-top: 100px;
+    margin-top: 30px;
     border: 2px solid #000;
     border-radius: 10px;
 }
 
-.form_container h2 {
+.container h2 {
     width: 100%;
+    margin-top: 100px;
     font-family: 'Baskervville', serif;
     font-size: 60px;
     text-align: center;
@@ -37,9 +38,7 @@
     justify-content: center;
 }
 
-
-.link {
-    margin-top: 30px;
+.modal_message {
     font-family: 'Baskervville', serif;
     font-size: 20px;
     text-align: center;
