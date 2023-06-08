@@ -1,15 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './dashboard.module.css';
 import Add from '../../assets/icons/add.png';
+import firebase from '../../helper/firebase';
 import List from '../../assets/icons/list.png';
 import AddProduct from '../../components/AddProduct';
 import ProductsList from '../../components/ProductList';
+import Button from '../../components/Button';
 
 
 function ProductsDashboard() {
 const [showAddProducts, setShowAddProducts] = useState(false);
 const [showProductsList, setShowProductsList] = useState(false);
+const navigate = useNavigate();
 
 const showAdd = () => {
   setShowAddProducts(!showAddProducts);
@@ -25,6 +29,17 @@ const closeAdd = () => {
   setShowAddProducts(false);
 }
 
+const logOut = () => {
+  firebase.auth().signOut();
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('role');
+  navigate('/');
+};
+
+const gotBack = () => {
+  navigate('/administracion')
+}
+
   return (
     <div className={styles.container}>
       <div className={styles.option} onClick={showAdd}>
@@ -37,6 +52,10 @@ const closeAdd = () => {
       </div>
       {showAddProducts && <AddProduct closeForm={closeAdd} /> }
       {showProductsList && <ProductsList />}
+      <div className={styles.buttons}>
+        <Button classes={'accept'} onClick={gotBack}>Volver</Button>
+        <Button classes={'red'} onClick={logOut}>Log Out</Button>
+      </div>
     </div>
   )
 }

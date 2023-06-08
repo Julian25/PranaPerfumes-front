@@ -9,12 +9,14 @@ import Product from '../components/Product';
 import Cart from '../pages/Cart';
 import ProductByCategory from '../pages/productByCategory';
 import ResetPassWord from '../components/RestartPassword';
+import ScrollTo from '../components/ScrollTo';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+        <ScrollTo />
         <Layout>
           <Routes>
               <Route path="/" element={<Home />}></Route>

@@ -35,7 +35,13 @@
     color: #fff;
 }
 
-
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+}
 
 
 

@@ -1,14 +1,18 @@
 import React from 'react';
 import {  useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AddCategory from '../AddCategory';
 import CategoriesList from '../CategoriesList';
+import firebase from '../../helper/firebase';
 import styles from './categoriesDashboard.module.css';
 import Add from '../../assets/icons/add.png';
 import List from '../../assets/icons/list.png';
+import Button from '../Button';
 
 function CategoriesDashboard() {
     const [showAddCategories, setShowAddCategories] = useState(false);
     const [showCategoriesList, setShowCategoriesList] = useState(false);
+    const navigate = useNavigate();
 
 
 
@@ -27,6 +31,16 @@ function CategoriesDashboard() {
       setShowAddCategories(false);
     }
 
+    const logOut = () => {
+      firebase.auth().signOut();
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('role');
+      navigate('/');
+    };
+
+    const gotBack = () => {
+      navigate('/administracion')
+    }
 
   return (
     <div className={styles.container}>
@@ -40,6 +54,10 @@ function CategoriesDashboard() {
       </div>
       { showAddCategories && <AddCategory closeForm={closeAdd}/> }
       { showCategoriesList  && <CategoriesList/> }
+      <div className={styles.buttons}>
+        <Button classes={'accept'} onClick={gotBack}>Volver</Button>
+        <Button classes={'red'} onClick={logOut}>Log Out</Button>
+      </div>
     </div>
   )
 }

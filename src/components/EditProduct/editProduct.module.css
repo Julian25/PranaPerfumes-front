@@ -155,3 +155,11 @@
 .input_container .input_error {
     border: 3px solid #ff0303;
 }
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+}

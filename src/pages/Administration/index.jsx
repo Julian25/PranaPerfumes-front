@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './administration.module.css';
 import { Link , useNavigate } from 'react-router-dom';
-import firebase from '../../helper/firebase'
+import firebase from '../../helper/firebase';
 import Admin from '../../assets/icons/admin.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAuthAdmin } from '../../redux/thunks/admin';
